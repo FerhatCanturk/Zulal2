@@ -1,0 +1,47 @@
+:root {
+     --ResimBorder   : rgb(86, 14, 69); /* Değişken adı ve değeri */
+     --ResimDolgu    : rgb(6, 7, 58);
+     --ResimDetay    : rgb(86, 14, 69);
+}
+.AnaBack 
+{
+     height: 100vh;width: 100vw;margin: 0;left: 0;right: 0;background-image: url('/static/images/Back008.jpg');
+     background-size: cover;background-position: center;background-repeat: no-repeat;background-attachment: fixed;
+     z-index: 1000;overflow: auto;
+}
+/* ********************************************************************************************************************** */
+/* ********************************************************************************************************************** */
+/* ********************************************************************************************************************** */
+.TextBeyazGolge {text-shadow: 2px 2px 20px rgb(255, 255, 255, 0.5), -2px -2px 20px rgb(255, 255, 255, 0.5), -2px 2px 20px rgb(255, 255, 255, 0.5), 2px -2px 20px rgb(255, 255, 255, 0.5);}
+.TextSiyahGolge {text-shadow: 2px 2px 2px rgb(0, 0, 0,0.5), -2px -2px 2px rgb(0, 0, 0,0.5), -2px 2px 2px rgb(0, 0, 0,0.5), 2px -2px 2px rgb(0, 0, 0,0.5);}
+/* ********************************************************************************************************************** */
+/* ********************************************************************************************************************** */
+/* ********************************************************************************************************************** */
+.w3-animate-left   {animation: animateleft 2s   ease-out;}
+.w3-animate-right  {animation: animateright 2s  ease-out;}
+.w3-animate-bottom {animation: animatebottom 2s ease-out;}
+.w3-animate-zoom   {animation: animatezoom 2s   ease-out;}
+
+/* ********************************************************************************************************************** */
+/* ********************************************************************************************************************** */
+/* ********************************************************************************************************************** */
+
+@media (max-width: 2000px) 
+{
+.Basliklar1             {display: block; font-weight: bolder; margin-top: 4px; color: rgb(248, 72, 72);font-family: 'Playwrite NZ';font-size: 36px;}
+.Basliklar2             {display: block; font-weight: bolder; margin-top:-4px; color: rgb(97, 204, 125);font-family: 'Playwrite NZ';font-size: 18px;}
+.MenuYazilari           {display: block; font-weight: bolder; font-size: 36px;  color: rgb(248, 72, 72);}
+.MenuYazilariExtra      {display: block; font-weight: bolder; font-size: 36px;  color: rgb(97, 204, 125);}
+.Animasyon1             {display: block; margin-top : 5vh; font-weight: bolder; font-size: 64px;  color: yellow;font-family: 'Ga Maaml';}
+.Animasyon2             {display: block; font-weight: bolder; font-size: 36px;  color: rgb(248, 72, 72);font-family: 'Playwrite NZ';}
+.Animasyon3             {display: block; font-weight: bolder; font-size: 36px;  color: rgb(255, 173, 225);font-family: 'Playwrite NZ';}
+.AnimasyonResim         {display: flex ; width: 37.5vw; justify-content: center; margin: 0 auto;}
+.AnaMetinBaslik         {display: block; font-weight: bolder; font-size: 64px; color: yellow;font-family: 'Playwrite NZ'; letter-spacing: 15px; margin-top: 40vh;}
+.SQLAciklamalar         {width:100%; margin-top: 5vh;}
+.ResimColDis1           {display: flex; flex-direction: column; border: 25px solid var(--ResimBorder); justify-content: center;}
+.ResimGolgesi           {box-shadow: 15px 15px 10px rgba(0, 0, 0, 1); }
+.ResimColDis2           {background-color: var(--ResimDolgu);}
+.ResimBoyutu            {height: 500px; width: auto; max-width: 100%;}
+.ResimAciklama          {height: 500px; width: auto; background-color: rgb(0, 0, 0);color: rgb(255, 198, 198); font-size: 24px; justify-content: center; padding-left: 32px; padding-right: 32px;}
+.ResimAltindaYazi       {display: flex; flex-direction: column; border-bottom: 25px solid var(--ResimBorder); border-left: 25px solid var(--ResimBorder); border-right: 25px solid var(--ResimBorder); justify-content: center; background-color: var(--ResimBorder);}
+}

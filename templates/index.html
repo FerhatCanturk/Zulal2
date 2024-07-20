@@ -1,0 +1,227 @@
+{% extends 'Base.html' %}
+{% block IcerikSolUst %}
+<!-- Animasyon -->
+<div class="w3-center">
+     <div class="w3-animate-zoom TextSiyahGolge Animasyon1">
+          {{ SiteSahibi }}
+     </div>
+     <div class="w3-animate-zoom TextSiyahGolge Animasyon2">
+          {{ Unvan }}
+     </div>
+</div>
+<div class="w3-center w3-animate-zoom"> <img class="AnimasyonResim" src="/static/images/IconOrgu.png" alt="" /></div>
+<div class="w3-center w3-animate-zoom TextSiyahGolge Animasyon3">
+     {{ WSabit[0]["Sutun03"] }}
+</div>
+<!-- Hakkımızda -->
+<div class="AnaMetinBaslik TextSiyahGolge"> HAKKIMIZDA</div>
+<div class="SQLAciklamalar TextBeyazGolge">
+     <h3>
+          {{ WSabit[0]["Sutun04"] }}
+     </h3>
+</div>
+
+<div class="container">
+     <div class="row">
+          <div class="col">
+               <div class="ResimColDis1 ResimColDis2 ResimGolgesi">
+                    <img class="ResimBoyutu" src="data:image/jpeg;base64,{{ SonProje[0]['Base64Pict'] }}" alt="Resim">
+               </div>
+          </div>
+
+          <div class="col">
+               <div class="ResimColDis1 ResimColDis2 ResimGolgesi">
+                    <div class="ResimAciklama ResimBoyutu" style="align-content: center;">
+                         <p>Son Çıkan Modelimiz</p>
+                         <p class="" style="color:yellow">{{ SonProje[0]["ModelAdi"] }} </p>
+                         <p>Beğeninize Sunulmuştur.</p>
+                         <br><br>
+                         <p>
+                              Modelimiz {{SonProje[0]["YayinTarihi"] }} tarihinde yayına alınmıştır.
+                              {{ SonProje[0]["VideoSys"] }}-Adet Video ve {{ SonProje[0]["PictSys"] }}-Adet Resim
+                              Dosyası İçermektedir.
+                         </p>
+                    </div>
+               </div>
+          </div>
+          <div class="col">
+               <div class="ResimColDis1 ResimColDis2 ResimGolgesi">
+                    <video class="ResimBoyutu" controls width="200">
+                         <source src="data:video/mp4;base64,{{ SonProje[0]['Base64Video'] }}" type="video/mp4">
+                         Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+               </div>
+          </div>
+     </div>
+</div>
+<!-- Toplam Model ve Örnek Sayısı Bildirimleri -->
+<div class="TextBeyazGolge" style="width:100%; margin-top: 100px;">
+     <strong>
+          <h3>
+               Şu anda aktif olarak {{ ToplamModel[0]["ToplamModelSys"] }}-Adet Modelimiz beğeninize sunulmuştur.
+          </h3>
+          <h3 style="margin-top: 100px;">
+               Sitedeki Modellerimiz {{ ToplamModel[0]["ToplamResimSys"] }}-Adet Resim ve
+               {{ ToplamModel[0]["ToplamVideoSys"] }}-Adet Video'dan' oluşmaktadır.
+          </h3>
+          <h3 style="margin-top: 100px;">{{ WSabit[0]["Sutun05"] }}</h3>
+          <h3 style="margin-top: 100px;">{{ WSabit[0]["Sutun06"] }}</h3>
+          <h3 style="margin-top: 100px;">{{ WSabit[0]["Sutun07"] }}</h3>
+     </strong>
+</div>
+<!-- Modellerimizden Seçmeler Görüntüleri -->
+<div class="AnaMetinBaslik TextSiyahGolge">
+     DİĞER PROJELERİMİZ
+</div>
+
+<div class="container">
+     <div class="row">
+          {% for RS in RastGeleSecim %}
+          <div class="col-sm" style="margin-top:50px;">
+               <div class="ResimColDis1 ResimColDis2  ResimGolgesi">
+                    <img class="ResimBoyutu" src="data:image/jpeg;base64,{{ RS['Base64Pict'] }}">
+
+               </div>
+               <div class="ResimAltindaYazi ResimGolgesi"><br>
+                    <div class="" style="color:white">Model Adı</div>
+                    <div class="" style="color:yellow">{{ RS['ModelAdi'] }}</div>
+                    <div class="" style="color:white">Yayın Tarihi</div>
+                    <div class="" style="color:yellow">{{ RS['YayinTarihi'] }}</div>
+                    <div class="" style="color:white">Model İçeriği</div>
+                    <div class="" style="color:yellow">{{ RS['ResimSayisi'] }}-Resim & {{ RS['VideoSayisi']
+                         }}-Video</div>
+                    <div class="" style="color:white">Üyelerimizden Değerlemeler</div>
+                    <div class="" style="color:yellow">{{ RS['VerilenPuanSayisi'] }} ( {{ RS['OrtPuan'] }} / 5 )
+                    </div>
+                    <div class="" style="color:white">Single Fiyatı</div>
+                    <div class="" style="color:yellow">{{ RS['Fiyati'] }}-TL</div>
+                    <br>
+               </div>
+          </div>
+          {% endfor %}
+     </div>
+</div>
+<!-- Abonelik Seçenekleri -->
+<div class="AnaMetinBaslik TextSiyahGolge">
+     ABONELİK SEÇENEKLERİ
+</div>
+<div class="container">
+     <div class="row">
+          {% for AB in AbonelikPaket %}
+          <div class="col-sm" style="margin-top:50px;">
+               <div class="ResimColDis1 ResimColDis2 ResimGolgesi" style="height: 300px; color: white;">
+                    <br>
+                    <div style="color:yellow; font-family: 'Playwrite NZ'; font-size: 24px; margin-bottom: 25px;">
+                         {{AB.Cins}}
+                    </div>
+                    {% if AB.Sutun1 != "---" %}<div class=""> {{ AB.Sutun1 }}</div>{% endif %}
+                    {% if AB.Sutun2 != "---" %}<div class=""> {{ AB.Sutun2 }}</div>{% endif %}
+                    {% if AB.Sutun3 != "---" %}<div class=""> {{ AB.Sutun3 }}</div>{% endif %}
+                    {% if AB.Sutun4 != "---" %}<div class=""> {{ AB.Sutun4 }}</div>{% endif %}
+                    <div
+                         style="color:rgb(255, 173, 225); font-family: 'Playwrite NZ'; font-size: 16px; margin-top: 25px;">
+                         {{AB.SutunFiyat}}</div>
+                    <br>
+               </div>
+          </div>
+          {% endfor %}
+     </div>
+</div>
+<!-- Abonelik Seçenekleri -->
+<div class="AnaMetinBaslik TextSiyahGolge">
+     BİZE ULAŞIN
+</div>
+<div class="w3-row-padding w3-center" style="margin-top: 5vh;">
+     <div class="w3-third ResimColDis2">
+          <br>
+          <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+          <p style="color:white">{{ WSabit[0]["Sutun08"] }}</p>
+          <br>
+     </div>
+     <div class="w3-third w3-teal">
+          <br>
+          <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+          <p>{{ WSabit[0]["Sutun09"] }}</p>
+          <br>
+     </div>
+     <div class="w3-third ResimColDis2">
+          <br>
+          <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+          <p style="color:white">{{ WSabit[0]["Sutun10"] }}</p>
+          <br>
+     </div>
+</div>
+<!-- Contact Section -->
+<div class="AnaMetinBaslik TextSiyahGolge">
+     MESAJ FORMU
+</div>
+
+<div class="w3-main w3-center" id="MesajFormu">
+     <form action="/MesajGonder" method="POST">
+          <div class="AnaEkran4" style="margin-top:16px;">
+               <div class="w3-container w3-padding-large w3-transparent w3-center">
+                    <div class="w3-center">
+                         <br /><br /><br />
+                         <form>
+                              <div class="row" style="padding-top:32px;">
+                                   <div class="col-md-4" style="padding-top:32px;">
+                                        <input type="text" name="AdSoyad" placeholder="Adınız Soyadınız"
+                                             class="form-control" required />
+                                   </div>
+                                   <div class="col-md-4" style="padding-top:32px;">
+                                        <input type="Email" name="MailAdres" placeholder="Mail Adresiniz"
+                                             class="form-control" required />
+                                   </div>
+                                   <div class="col-md-4" style="padding-top: 32px;">
+                                        <input type="number" name="Telefon" placeholder="Telefon Numaranız"
+                                             class="form-control" required />
+                                   </div>
+                              </div>
+                              <br /><br />
+
+                              <input type="text" name="Konu" placeholder="Mesajınızın Konusu" class="form-control"
+                                   required />
+
+                              <br /><br />
+
+                              <textarea rows="5" name="Mesaj" placeholder="Mesajınızı Yazınız..." class="form-control"
+                                   required></textarea>
+                              <br /><br />
+
+                              <center>
+                                   <button class="w3-button w3-teal w3-padding-large w3-hover-black">
+                                        <i class="fas fa-paper-plane"></i>&nbsp;Mesaj
+                                        Gönder</button>
+                              </center>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </form>
+</div>
+
+<!-- Footer Section -->
+
+
+<script>
+     // Form gönderildiğinde çalışacak fonksiyon
+     document.getElementById('contactForm').addEventListener('submit', function (event) {
+          event.preventDefault(); // Formun gerçek gönderimini engelle
+
+          // Mesaj kutusunu göster
+          const messageBox = document.getElementById('messageBox');
+          messageBox.style.display = 'block';
+
+          // 3 saniye sonra mesaj kutusunu gizle
+          setTimeout(function () {
+               messageBox.style.display = 'none';
+          }, 3000);
+
+          // Formu gerçekten göndermek için bu satırı ekleyin
+          this.submit();
+     });
+</script>
+
+{% endblock %}
+{% block IcerikSolAlt %}
+{% endblock %}

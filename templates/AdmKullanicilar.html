@@ -1,0 +1,152 @@
+{% extends 'Base.html' %}
+
+
+{% block IcerikSag %}
+<!-- Sağ Kolon İçerikleri -->
+<div class="table-responsive-lg " style="padding-left: 50px; padding-right: 150px;">
+     <table class="table ResimGolgesi">
+          <thead>
+               <tr class="table-danger">
+                    <th role="columnheader" style="text-align: left;">Kullanıcı Bilgileri</th>
+                    <th role="columnheader" style="text-align: left;">Abonelik</th>
+                    <th role="columnheader" style="justify-content: center; text-align: center;">
+                         İşlemler</th>
+               </tr>
+          </thead>
+          <tbody role="">
+               {% for User in Users %}
+               <form action="#Satir{{User.UserID}}"></form>
+               <tr id="{{User.UserID}}" style="background-color: aliceblue;">
+                    <td style="width: 100vw; text-align: left;">
+                         <strong style="color:red">AdSoyad: {{User.UserAdiSoyadi}}</strong>
+                         <div>GSM.No: {{User.UserGSMNumber}}</div>
+                         <div>eMail: {{User.UserMailAdress}}</div>
+                         <div>TalepTarihi: {{User.UTalep}}</div>
+                         <div>UserName: {{User.UserName}}</div>
+                         <div>PassWord: 123456</div>
+                         <div>OnayKodu: {{User.VerifyMailCode}}</div>
+                    </td>
+                    <td style="width: 100vw; text-align: left;">
+                         <div>Paketi: {{User.PaketAdi}}</div>
+                         <div>OnayTarihi: {{User.UOnay}}</div>
+                         <div>AyrılmaTarihi: {{User.UAyrilma}}</div>
+                         <div>BlokajTarihi: {{User.UBloke}}</div>
+                    </td>
+                    <td style="width: 10vw; text-align: center; justify-content: center;">
+                         <div class="w3-center">
+                              <p>{{User.DRM}}</p>
+                              <!-- Durum Arası -->
+                              {% if User.DRM == 'AKTİF' %}
+                              <img src="/static/images/IconActive.svg">
+                              <form action="/AdmUyeKapat/{{SessionID}}/{{User.UserID}}" method="POST">
+                                   <div>
+                                        <button style="width: 100px; margin-top: 4px;" type="submit"
+                                             class="btn btn-danger btn-sm">Kapat</button>
+                                   </div>
+                              </form>
+                              <form action="/AdmCihazReset/{{SessionID}}/{{User.UserID}}" method="POST">
+                                   <div>
+                                        <button style="width: 100px; margin-top: 4px;" type="submit"
+                                             class="btn btn-warning btn-sm">CihazReset</button>
+                                   </div>
+                              </form>
+                              <form action="/AdmUyeDetay/{{SessionID}}/{{User.UserID}}" method="POST">
+                                   <div>
+                                        <button style="width: 100px; margin-top: 4px;" type="submit"
+                                             class="btn btn-primary btn-sm">Detay</button>
+                                   </div>
+                              </form>
+                              <form action="/AdmModelAc/{{SessionID}}/{{User.UserID}}" method="POST">
+                                   <div>
+                                        <button style="width: 100px; margin-top: 4px;" type="submit"
+                                             class="btn btn-dark btn-sm">ModelAç</button>
+                                   </div>
+                              </form>
+                              {% endif %}
+                              <!-- Durum Arası -->
+                              {% if User.DRM=='ÖDEME BEKLENİYOR' %}
+                              <img src="/static/images/IconCash.svg">
+                              <form action="{{ url_for('AdmUyeAktifleme', session_id=SessionID, UserID=User.UserID, PaketID=1) }}"
+                                   method="POST">
+                                   <button style="width: 100px; margin-top: 4px;" type="submit" {% if
+                                        User.PaketAdi=='WS' %} class="btn btn-success btn-sm" {% else %}
+                                        class="btn btn-info btn-sm" {% endif %}>ÜyeAç (WS)
+                                   </button>
+                              </form>
+                              <form action="{{ url_for('AdmUyeAktifleme', session_id=SessionID, UserID=User.UserID, PaketID=2) }}"
+                                   method="POST">
+                                   <button style="width: 100px; margin-top: 4px;" type="submit" {% if
+                                        User.PaketAdi=='MP' %} class="btn btn-success btn-sm" {% else %}
+                                        class="btn btn-info btn-sm" {% endif %}>ÜyeAç
+                                        (MP)</button>
+                              </form>
+                              <form action="{{ url_for('AdmUyeAktifleme', session_id=SessionID, UserID=User.UserID, PaketID=0) }}"
+                                   method="POST">
+                                   <button style="width: 100px; margin-top: 4px;" type="submit" {% if
+                                        User.PaketAdi=='SP' %} class="btn btn-success btn-sm" {% else %}
+                                        class="btn btn-info btn-sm" {% endif %}>ÜyeAç
+                                        (SP)</button>
+                              </form>
+
+                              <form action="/AdmUyeRed/{{SessionID}}/{{User.UserID}}" method="POST">
+                                   <button style="width: 100px; margin-top: 4px;" type="submit"
+                                        class="btn btn-danger btn-sm">ÜyeRed</button>
+                              </form>
+                              {% endif %}
+                              <!-- Durum Arası -->
+                              {% if User.DRM=='YÖNETİCİ' %}
+                              <img src="/static/images/IconAdmin.svg">
+                              {% endif %}
+                              <!-- Durum Arası -->
+                              {% if User.DRM=='BLOKE EDİLDİ' %}
+                              <img src="/static/images/IconBlock.svg">
+                              <form action="/AdmUyeDetay/{{SessionID}}/{{User.UserID}}" method="POST">
+                                   <div>
+                                        <button style="width: 100px; margin-top: 4px;" type="submit"
+                                             class="btn btn-primary btn-sm">Detay</button>
+                                   </div>
+                              </form>
+                              {% endif %}
+                              <!-- Durum Arası -->
+                              {% if User.DRM=='PASİF' %}
+                              <img src="/static/images/IconPasif.svg">
+                              <form action="{{ url_for('AdmUyeAktifleme', session_id=SessionID, UserID=User.UserID, PaketID=1) }}"
+                                   method="POST">
+                                   <button style="width: 100px; margin-top: 4px;" type="submit" {% if
+                                        User.PaketAdi=='WS' %} class="btn btn-success btn-sm" {% else %}
+                                        class="btn btn-info btn-sm" {% endif %}>ÜyeAç (WS)
+                                   </button>
+                              </form>
+                              <form action="{{ url_for('AdmUyeAktifleme', session_id=SessionID, UserID=User.UserID, PaketID=2) }}"
+                                   method="POST">
+                                   <button style="width: 100px; margin-top: 4px;" type="submit" {% if
+                                        User.PaketAdi=='MP' %} class="btn btn-success btn-sm" {% else %}
+                                        class="btn btn-info btn-sm" {% endif %}>ÜyeAç
+                                        (MP)</button>
+                              </form>
+                              <form action="{{ url_for('AdmUyeAktifleme', session_id=SessionID, UserID=User.UserID, PaketID=0) }}"
+                                   method="POST">
+                                   <button style="width: 100px; margin-top: 4px;" type="submit" {% if
+                                        User.PaketAdi=='SP' %} class="btn btn-success btn-sm" {% else %}
+                                        class="btn btn-info btn-sm" {% endif %}>ÜyeAç
+                                        (SP)</button>
+                              </form>
+                              {% endif %}
+                              <!-- Durum Arası -->
+                              {% if User.DRM=='RED EDİLDİ' %}
+                              <img src="/static/images/IconBlock.svg">
+                              <form action="/AdmUyeDetay/{{SessionID}}/{{User.UserID}}" method="POST">
+                                   <div>
+                                        <button style="width: 100px; margin-top: 4px;" type="submit"
+                                             class="btn btn-primary btn-sm">Detay</button>
+                                   </div>
+                              </form>
+                              {% endif %}
+                    </td>
+               </tr>
+               </form>
+               {% endfor %}
+          </tbody>
+     </table>
+</div>
+{% endblock %}

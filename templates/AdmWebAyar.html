@@ -1,0 +1,529 @@
+{% extends 'Base.html' %}
+{% block IcerikSag %}
+<div>
+     <div class="table-responsive-lg"
+               style="margin-top: px; padding-left: 50px; padding-right: 150px;">
+
+          <form action="/AdmWEBKaydet"
+                    method="POST">
+               <!-- Admin Bilgi Girişi -->
+               <!-- Admin Bilgi Girişi -->
+               <!-- Admin Bilgi Girişi -->
+               <!-- Admin Bilgi Girişi -->
+               <!-- Admin Bilgi Girişi -->
+               <table class="table ResimGolgesi">
+                    <thead>
+                         <tr class="table-danger">
+                              <!-- <th role="columnheader"></th> -->
+                              <th style="text-align: left; justify-content: left;">Site Ayarları</th>
+                              <th style="text-align: left; justify-content: left;"></th>
+                         </tr>
+                    </thead>
+                    <tbody role="">
+
+                         <!-- Yeni Satır Boşluk -->
+                         <tr id="" style="background-color: aliceblue;">
+                              <td style="width: 1w; text-align: left; justify-content: left;">
+                                   Adınız Soyadınız
+                              </td>
+                              <td class=""
+                                        style="width: 10vw;">
+                                   <input type="text"
+                                             name="AdSoyad"
+                                             style="width:35vw;"
+                                             value="{{WebSabitler[0]['Sutun01']}}">
+                              </td>
+                         </tr>
+                         <!-- Yeni Satır Boşluk -->
+                         <tr id=""
+                                   style="background-color: aliceblue;">
+                              <td style="width: 1w; text-align: left; justify-content: left;">
+                                   Ünavınız
+                              </td>
+                              <td class=""
+                                        style="width: 10vw;">
+                                   <input type="text"
+                                             name="Unvan"
+                                             style="width:35vw;"
+                                             value="{{WebSabitler[0]['Sutun02']}}">
+                              </td>
+                         </tr>
+                         <!-- Yeni Satır Boşluk -->
+                         <tr id=""
+                                   style="background-color: aliceblue;">
+                              <td style="width: 1w; text-align: left; justify-content: left;">
+                                   Sloganınız
+                              </td>
+                              <td class=""
+                                        style="width: 10vw;">
+                                   <input type="text"
+                                             name="Slogan"
+                                             style="width:35vw;"
+                                             value="{{WebSabitler[0]['Sutun03']}}">
+                              </td>
+                         </tr>
+                         <!-- Yeni Satır Boşluk -->
+                         <tr id=""
+                                   style="background-color: aliceblue;">
+                              <td style="width: 1w; text-align: left; justify-content: left;">
+                                   eMail Adresiniz
+                              </td>
+                              <td class=""
+                                        style="width: 10vw;">
+                                   <input type="mail"
+                                             name="email"
+                                             style="width:35vw;"
+                                             value="{{WebSabitler[0]['Sutun08']}}">
+                              </td>
+                         </tr>
+                         <!-- Yeni Satır Boşluk -->
+                         <tr id=""
+                                   style="background-color: aliceblue;">
+                              <td style="width: 1w; text-align: left; justify-content: left;">
+                                   Telefon No
+                              </td>
+                              <td class=""
+                                        style="width: 10vw;">
+                                   <input type="mail"
+                                             name="Telefon"
+                                             style="width:35vw;"
+                                             value="{{WebSabitler[0]['Sutun10']}}">
+                              </td>
+                         </tr>
+                         <!-- Yeni Satır Boşluk -->
+                         <tr id=""
+                                   style="background-color: aliceblue;">
+                              <td style="width: 1w; text-align: left; justify-content: left;">
+                                   Adresiniz
+                              </td>
+                              <td class=""
+                                        style="width: 10vw;">
+                                   <input type="mail"
+                                             name="Adres"
+                                             style="width:35vw;"
+                                             value="{{WebSabitler[0]['Sutun09']}}">
+                              </td>
+                         </tr>
+
+                    </tbody>
+               </table>
+               <button class="w3-button w3-teal w3-padding-large w3-hover-black ResimGolgesi"
+                         style="margin-bottom: 100px;">
+                    <i class="fas fa-paper-plane"></i>&nbsp;Hepsini Kaydet</button>
+               <!-- Giriş Sayfası Sabitleri -->
+               <!-- Giriş Sayfası Sabitleri -->
+               <!-- Giriş Sayfası Sabitleri -->
+               <!-- Giriş Sayfası Sabitleri -->
+               <!-- Giriş Sayfası Sabitleri -->
+               <table class="table ResimGolgesi"
+                         style="margin-top: 100px;">
+                    <thead>
+                         <tr class="table-danger">
+
+                              <th style="text-align: left; justify-content: left;">Ana Giriş Sayfası</th>
+                              <th style="text-align: left; justify-content: left;"></th>
+                         </tr>
+                    </thead>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Açıklama-1
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <textarea rows="5"
+                                        name="Aciklama1"
+                                        style="width:35vw;">{{WebSabitler[0]['Sutun04']}}</textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Açıklama-2
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <textarea rows="5"
+                                        name="Aciklama2"
+                                        style="width:35vw;">{{WebSabitler[0]['Sutun05']}}</textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Açıklama-3
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <textarea rows="5"
+                                        name="Aciklama3"
+                                        style="width:35vw;">{{WebSabitler[0]['Sutun06']}}</textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Açıklama-4
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <textarea rows="5"
+                                        name="Aciklama4"
+                                        style="width:35vw;">{{WebSabitler[0]['Sutun07']}}</textarea>
+                         </td>
+                    </tr>
+               </table>
+               <button class="w3-button w3-teal w3-padding-large w3-hover-black ResimGolgesi"
+                         style="margin-bottom: 100px;">
+                    <i class="fas fa-paper-plane"></i>&nbsp;Hepsini Kaydet</button>
+               <!-- Giriş Sayfası WS Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası WS Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası WS Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası WS Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası WS Abonelik Seçenekleri Özeti -->
+               <table class="table ResimGolgesi"
+                         style="margin-top: 100px;">
+                    <thead>
+                         <tr class="table-danger">
+
+                              <th style="text-align: left; justify-content: left;">{{Paketler[0]['Cins']}}</th>
+                              <th style="text-align: left; justify-content: left;"></th>
+                         </tr>
+                    </thead>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Abonelik Cinsi
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="WSAciklamaCins"
+                                        style="width:35vw;"
+                                        value="{{Paketler[0]['Cins']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              WS Açıklama-1
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="WSAciklama1"
+                                        style="width:35vw;"
+                                        value="{{Paketler[0]['Sutun1']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              WS Açıklama-2
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="WSAciklama2"
+                                        style="width:35vw;"
+                                        value="{{Paketler[0]['Sutun2']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              WS Açıklama-3
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="WSAciklama3"
+                                        style="width:35vw;"
+                                        value="{{Paketler[0]['Sutun3']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              WS Açıklama-4
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="WSAciklama4"
+                                        style="width:35vw;"
+                                        value="{{Paketler[0]['Sutun4']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Abonelik Bedeli
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="WSAciklamaSutunFiyat"
+                                        style="width:35vw;"
+                                        value="{{Paketler[0]['SutunFiyat']}}"></textarea>
+                         </td>
+                    </tr>
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Kullanım Kıralları
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <textarea rows="10"
+                                        name="KKWSAciklama"
+                                        style="width:35vw;">{{Paketler[0]['Kurallar']}}</textarea>
+                         </td>
+                    </tr>
+               </table>
+               <button class="w3-button w3-teal w3-padding-large w3-hover-black ResimGolgesi"
+                         style="margin-bottom: 100px;">
+                    <i class="fas fa-paper-plane"></i>&nbsp;Hepsini Kaydet</button>
+               <!-- Giriş Sayfası MP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası MP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası MP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası MP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası MP Abonelik Seçenekleri Özeti -->
+               <table class="table ResimGolgesi"
+                         style="margin-top: 100px;">
+                    <thead>
+                         <tr class="table-danger">
+
+                              <th style="text-align: left; justify-content: left;">{{Paketler[1]['Cins']}}</th>
+                              <th style="text-align: left; justify-content: left;"></th>
+                         </tr>
+                    </thead>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Abonelik Cinsi
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="MPAciklamaCins"
+                                        style="width:35vw;"
+                                        value="{{Paketler[1]['Cins']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              MP Açıklama-1
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="MPAciklama1"
+                                        style="width:35vw;"
+                                        value="{{Paketler[1]['Sutun1']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              MP Açıklama-2
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="MPAciklama2"
+                                        style="width:35vw;"
+                                        value="{{Paketler[1]['Sutun2']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              MP Açıklama-3
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="MPAciklama3"
+                                        style="width:35vw;"
+                                        value="{{Paketler[1]['Sutun3']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              MP Açıklama-4
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="MPAciklama4"
+                                        style="width:35vw;"
+                                        value="{{Paketler[1]['Sutun4']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Abonelik Bedeli
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="MPAciklamaSutunFiyat"
+                                        style="width:35vw;"
+                                        value="{{Paketler[1]['SutunFiyat']}}"></textarea>
+                         </td>
+                    </tr>
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Kullanım Kıralları
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <textarea rows="10"
+                                        name="KKMPAciklama"
+                                        style="width:35vw;">{{Paketler[1]['Kurallar']}}</textarea>
+                         </td>
+                    </tr>
+               </table>
+               <button class="w3-button w3-teal w3-padding-large w3-hover-black ResimGolgesi"
+                         style="margin-bottom: 100px;">
+                    <i class="fas fa-paper-plane"></i>&nbsp;Hepsini Kaydet</button>
+               <!-- Giriş Sayfası SP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası SP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası SP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası SP Abonelik Seçenekleri Özeti -->
+               <!-- Giriş Sayfası SP Abonelik Seçenekleri Özeti -->
+               <table class="table ResimGolgesi"
+                         style="margin-top: 100px;">
+                    <thead>
+                         <tr class="table-danger">
+
+                              <th style="text-align: left; justify-content: left;">{{Paketler[2]['Cins']}}</th>
+                              <th style="text-align: left; justify-content: left;"></th>
+                         </tr>
+                    </thead>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Abonelik Cinsi
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="SPAciklamaCins"
+                                        style="width:35vw;"
+                                        value="{{Paketler[2]['Cins']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              SP Açıklama-1
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="SPAciklama1"
+                                        style="width:35vw;"
+                                        value="{{Paketler[2]['Sutun1']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              SP Açıklama-2
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="SPAciklama2"
+                                        style="width:35vw;"
+                                        value="{{Paketler[2]['Sutun2']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              SP Açıklama-3
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="SPAciklama3"
+                                        style="width:35vw;"
+                                        value="{{Paketler[2]['Sutun3']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              SP Açıklama-4
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="SPAciklama4"
+                                        style="width:35vw;"
+                                        value="{{Paketler[2]['Sutun4']}}"></textarea>
+                         </td>
+                    </tr>
+                    <!-- Yeni Satır Boşluk -->
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Abonelik Bedeli
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <input type="text"
+                                        name="SPAciklamaSutunFiyat"
+                                        style="width:35vw;"
+                                        value="{{Paketler[2]['SutunFiyat']}}"></textarea>
+                         </td>
+                    </tr>
+                    <tr id=""
+                              style="background-color: aliceblue;">
+                         <td style="width: 1w; text-align: left; justify-content: left;">
+                              Kullanım Kıralları
+                         </td>
+                         <td class=""
+                                   style="width: 10vw;">
+                              <textarea rows="10"
+                                        name="KKSPAciklama"
+                                        style="width:35vw;">{{Paketler[2]['Kurallar']}}</textarea>
+                         </td>
+                    </tr>
+               </table>
+
+               <button class="w3-button w3-teal w3-padding-large w3-hover-black ResimGolgesi"
+                         style="margin-bottom: 100px;">
+                    <i class="fas fa-paper-plane"></i>&nbsp;Hepsini Kaydet</button>
+          </form>
+     </div>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'Base.html' %}
+{% block IcerikSag %}
+<div class="table-responsive-lg" style="margin-top: px; padding-left: 50px; padding-right: 150px;">
+     <table class="table">
+          <thead>
+               <tr class="table-danger">
+                    <!-- <th role="columnheader"></th> -->
+                    <th class="w3-center" role="">Model</th>
+                    <th class="w3-center" role="">Durum</th>
+                    <th style="justify-content: left; text-align: left;">Açıklama</th>
+               </tr>
+          </thead>
+          <tbody role="">
+               {% for Model in Models %}
+               <form action="#Satir/{{UserID}}/{{Model.ModelID}}"></form>
+               <tr id="{{UserID}}" style="background-color: aliceblue;">
+                    <td style="width: 1vw;">
+                         <img style="border-radius: 15px; width: 100px; height: 150px;"
+                              src="data:image/jpeg;base64,{{ Model['Base64Pict'] }}" alt="">
+                    </td>
+
+                    <td style="width: 1vw;">
+                         {% if Model.PaketID == 0 %}
+                         <form action="/ModelGoster/{{SessionID}}/{{UserID}}/{{Model.ModelID}}" method="POST">
+                              <button type="submit"
+                                   style="border: none; background: none; padding: 0; cursor: pointer;">
+                                   {{Model.Paket}}
+                                   <img src="/static/images/IconPasif.svg" alt="Goster">
+                                   <div>Modeli Göster</div>
+                              </button>
+                         </form>
+                         {% else %}
+                         <form action="/ModelGizle/{{SessionID}}/{{UserID}}/{{Model.ModelID}}" method="POST">
+                              <button type="submit"
+                                   style="border: none; background: none; padding: 0; cursor: pointer;">
+                                   {{Model.Paket}}
+                                   <img src="/static/images/IconActive.svg" alt="Goster">
+                                   <div>{{Model.Paket}} Modeli Kapat</div>
+                              </button>
+                         </form>
+                         {% endif %}
+                    </td>
+                    <td style="width: 100vw; justify-content: left; text-align: left;">
+                         <div>Model Adı: {{Model.ModelAdi}}</div>
+                         <div>Yayın Tarihi: {{Model.YayinTarihi}}</div>
+                         <div>Proje Bedeli: {{Model.Fiyati}}-TL</div>
+                    </td>
+               </tr>
+               </form>
+               {% endfor %}
+          </tbody>
+     </table>
+     <div class="w3-center">
+          <form action="/ModelAcmaOnceki/{{ SessionID }}/{{ IlkSatir }}" method="POST" style="display: inline-block;">
+               <button style="width: 100px; margin-top: 4px;" type="submit" class="btn btn-success btn-sm" {% if
+                    IlkSatir==1 %} disabled {% endif %}>
+                    Önceki Sayfa</button>
+          </form>
+
+          <form action="/ModelAcmaSonraki/{{ SessionID }}/{{ SonSatir }}" method="POST" style="display: inline-block;">
+               <button style="width: 100px; margin-top: 4px;" type="submit" class="btn btn-success btn-sm" {% if
+                    SonSatir>=ToplamSatir %} disabled {% endif
+                    %}>Sonraki
+                    Sayfa</button>
+          </form>
+          <h5 style="padding-bottom: 64px; padding-top: 64px;">({{IlkSatir}} - {{SonSatir}}) /
+               {{ToplamSatir}}</h5>
+     </div>
+</div>
+{% endblock %}

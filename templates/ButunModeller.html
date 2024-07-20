@@ -1,0 +1,43 @@
+{% extends 'Base.html' %}
+{% block SecondRowHeader %}
+Bütün Modellerimiz
+{% endblock %}
+{% block ExtraNav2 %}
+{% for Group in Groups %}
+<a href="ModelSorgulama/{{ Group['GrubID'] }}" class="MenuYazilari w3-bar-item w3-button w3-hover-black"
+     onclick="closeNav()">{{Group["GrubAdi"] }} PROJELERİMİZ</a>
+{% endfor %}
+{% endblock %}
+{% block IcerikSolUst %} {% endblock %}
+{% block IcerikSolAlt %}
+<div class="AnaMetinBaslik TextSiyahGolge" style="margin-top: 25px;">
+     {{ Models[0]["GrubAdi"] }} PROJELERİMİZ
+</div>
+
+
+{% for Model in Models %}
+<div class="grid-container" style="display: inline-grid;">
+     <div class="grid-item" style="display: grid; margin:25px;">
+          <div class="ResimGolgesi ResimColDis1 ResimColDis2">
+               <img style="width:300px; height:auto;" src="data:image/jpeg;base64,{{ Model['Base64Pict'] }}">
+          </div>
+          <div class="ResimAltindaYazi ResimGolgesi"><br>
+               <div class="" style="color:white">Model Adı</div>
+               <div class="" style="color:yellow">{{ Model['ModelAdi'] }}</div>
+               <div class="" style="color:white">Yayın Tarihi</div>
+               <div class="" style="color:yellow">{{ Model['YayinTarihi'] }}</div>
+               <div class="" style="color:white">Model İçeriği</div>
+               <div class="" style="color:yellow">{{ Model['ResimSayisi'] }}-Resim & {{ Model['VideoSayisi']
+                    }}-Video
+               </div>
+               <div class="" style="color:white">Üyelerimizden Değerlemeler</div>
+               <div class="" style="color:yellow">{{ Model['VerilenPuanSayisi'] }} ( {{ Model['OrtPuan'] }} / 5 )
+               </div>
+               <div class="" style="color:white">Single Fiyatı</div>
+               <div class="" style="color:yellow">{{ Model['Fiyati'] }}-TL</div>
+               <br>
+          </div>
+     </div>
+</div>
+{% endfor %}
+{% endblock %}
